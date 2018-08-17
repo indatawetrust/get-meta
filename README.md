@@ -11,7 +11,9 @@ let getMeta = require('get-meta');
 getMeta('https://github.com').then(console.log)
 
 {
-  title: "The world's leading software development platform · GitHubsecurity-adminintegrationsopen-source",
+  icon: 'https://assets-cdn.github.com/favicon.ico',
+  title: 'The world’s leading software development platform · GitHub1clr-code-hosting',
+  image: 'https://assets-cdn.github.com/images/search-shortcut-hint.svg',
   charset: 'utf-8',
   name: 'theme-color',
   content: '#1e2327',
