@@ -8,7 +8,7 @@ Status](https://img.shields.io/travis/indatawetrust/get-meta.svg)](https://travi
 ```js
 let getMeta = require('get-meta');
 
-getMeta('https://github.com').then(console.log)
+getMeta({ url: 'https://github.com' }).then(console.log)
 
 {
   icon: 'https://assets-cdn.github.com/favicon.ico',

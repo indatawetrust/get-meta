@@ -1,6 +1,6 @@
 {
   "name": "get-meta",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Returns meta information for the given url",
   "main": "index.js",
   "scripts": {

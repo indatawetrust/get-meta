@@ -16,6 +16,6 @@ test('manual', async t => {
       class: 'js-ga-set',
       'http-equiv': 'x-pjax-version',
     },
-    await getMeta('https://github.com'),
+    await getMeta({ url: 'https://github.com' }),
   );
 });

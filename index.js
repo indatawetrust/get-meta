@@ -4,9 +4,12 @@ const request = require('request'),
   urlRegex = require('url-regex'),
   isReachable = require('is-reachable');
 
-module.exports = url => {
+module.exports = ({ url, timeout = 5e3 }) => {
   return new Promise((resolve, reject) => {
-    request(url, async (err, response, body) => {
+    request({
+      url,
+      timeout: timeout 
+    }, async (err, response, body) => {
       if (err) reject(err);
 
       if (body && typeof body == 'string') {
@@ -30,13 +33,13 @@ module.exports = url => {
         if ($('[rel=icon]').attr('href')) {
           const icon = _url.resolve(main, $('[rel=icon]').attr('href'));
 
-          metas['icon'] = (await isReachable(icon)) ? icon : '';
+          metas['icon'] = (await isReachable(_url.resolve('http://', icon))) ? icon : '';
         } else {
           metas['icon'] = '';
         }
 
         metas['title'] = $('title').text();
-        metas['image'] = (await isReachable(image)) ? image : '';
+        metas['image'] = (await isReachable(_url.resolve('http://', image))) ? image : '';
 
         $('meta').each((i, el) => {
           metas = Object.assign(metas, el.attribs);
